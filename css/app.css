@@ -1,0 +1,416 @@
+/* Does not allow to click opened card. */
+.counter {
+  pointer-events: none;
+}
+
+/* Animation */
+.wobble-mismatch {
+  /* Animation name : wobble-mismatch, animation duration : 1sec. */
+  animation: wobble-mismatch 1s;
+  animation-fill-mode: both;
+  /*
+  * Animation-fil-mode -- Specifies what values are applied by
+  * the animation outside the time it is executing.
+  */
+}
+/* Animation wobble-mismatch occurs when the cards are not matched. */
+@keyframes wobble-mismatch {
+  0% {
+    transform: translateX(0%);
+  }
+
+  15% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+
+  30% {
+    transform: translateX(20%) rotate(3deg);
+  }
+
+  45% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+
+  75% {
+    transform: translateX(-5%) rotate(-1deg);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+/* Animation. */
+.wobble-match {
+  /* Animation name : wobble-match, animation duration : 1sec. */
+  animation: wobble-match 1s;
+  /*
+  * Animation-fil-mode -- Specifies what values are applied by
+  * the animation outside the time it is executing.
+  */
+  animation-fill-mode: both;
+}
+/* Animation wobble-match occurs when the cards are matched. */
+@keyframes wobble-match {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  15% {
+    transform: translate(-20%, -25%) rotate(-5deg);
+  }
+
+  30% {
+    transform: translate(20%, 20%) rotate(3deg);
+  }
+
+  45% {
+    transform: translate(-15%, -15%) rotate(-3deg);
+  }
+
+  60% {
+    transform: translate(10%, 10%) rotate(2deg);
+  }
+
+  75% {
+    transform: translate(-5%, -5%) rotate(-1deg);
+  }
+
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+.pause {
+  float: left;
+  margin-top: 5px;
+  font-size: 25px;
+  position: relative;
+}
+
+.pause:hover {
+  cursor: pointer;
+}
+/* Displays a text on hover. */
+.pause .tooltiptext,
+.restart .tooltiptext {
+  padding: 5px;
+  /* By default the text should be hidden. */
+  visibility: hidden;
+  width: 150px;
+  border: solid 1px black;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 160%;
+  left: -80%;
+  margin-left: -45px;
+  font-size: 22px;
+}
+
+.restart {
+  position: relative;
+}
+
+.restart .tooltiptext {
+  padding: 0;
+  width: 155px;
+  top: 120%;
+  font-size: 20px;
+}
+
+.restart .tooltiptext::after,
+.pause .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -7px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/* On hover the text should be visible. */
+.restart:hover .tooltiptext,
+.pause:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* Content that displays after pausing. */
+.pause-modal-content {
+  text-align: center;
+  background: linear-gradient(150deg, #e6e6fa 10%, #d8bfd8 90%);
+  margin: auto;
+  margin-top: 120px;
+  margin-left: 33%;
+  padding: 10px;
+  width: 30%;
+  height: 43%;
+  border-radius: 20px;
+  border: solid 2px #dda0dd;
+  box-shadow: 10px 10px 5px grey;
+}
+
+/* Aranges the two images pause and restart. */
+.images {
+  display: flex;
+  margin-left: 15%;
+}
+
+.image-resume {
+  width: 45%;
+  height: 45%;
+  cursor: pointer;
+}
+
+.image-restart {
+  width: 30%;
+  height: 20%;
+  cursor: pointer;
+  padding-top: 20px;
+}
+
+.moves,
+.f-moves{
+  margin-left: 30px;
+}
+
+.time{
+  margin-left: 50px;
+}
+
+/* Overlapping an image on modal(background) and modal content. */
+.cong {
+  width: 20%;
+  height: 120px;
+  position: absolute;
+  top: 23%;
+  margin-left: 39%;
+  border-radius: 50%;
+  border: solid 1px white;
+  box-shadow: 0 3px 3px 0 white;
+}
+
+/* The Modal (background). */
+.modal,
+.pause-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: url(../img/geometry2.png) repeat 0 0;
+  animation: slide 7s linear infinite alternate;
+  /* animate    background image    animation-name:slide     animation-duration:7s
+  animation-timing-function:linear     animation-iteration-count:infinite     animation-direction:alternate. */
+}
+
+/* Animate background image. */
+@keyframes slide {
+  from {  background-position: 0 0; }
+  to {  background-position: -600px 0; }
+}
+
+/* Modal Content. */
+.modal-content {
+  background-color: #ffdab9;
+  margin: auto;
+  margin-top: 110px;
+  margin-left: 29%;
+  padding: 20px;
+  width: 40%;
+  height: 55%;
+  border-radius: 12px;
+  text-align: center;
+  border: solid 1px;
+}
+
+/* The Close Button. */
+.close {
+  z-index: 1;
+  margin-top: 0;
+  color: #800000;
+  float: right;
+  font-size: 45px;
+  font-weight: bold;
+  width: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.close:hover {
+  background-color: #a9a9a9;
+  color: #000;
+  cursor: pointer;
+}
+
+/* content on pop box is 80px from top margin. */
+.content {
+  margin-top: 80px;
+}
+
+/* Total Time text styles on modal box */
+.t-time{
+   font-size: 20px;
+   font-weight: bold;
+   padding-right: 20px;
+}
+
+.total-time {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+/* Styles for the text-> Rating */
+#rating {
+  display: flex;
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 140px;
+}
+
+/* Stars alignment on modal box */
+.final-stars {
+  list-style: none;
+  display: flex;
+  margin-top: 0;
+}
+
+/* Styles for the text-> Total moves */
+.final-moves {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Restart setup */
+.F-restart {
+  cursor: pointer;
+  margin-left: 49%;
+  font-size: 25px;
+  width: 30px;
+}
+
+.F-restart:hover {
+  color: green;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff url(../img/geometry2.png);
+  /* Background pattern from Subtle Patterns */
+  font-family: "Coda", cursive;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 0;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+.deck {
+  width: 660px;
+  min-height: 680px;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em;
+}
+
+.deck .card {
+  height: 125px;
+  width: 125px;
+  background: #2e3d49;
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+  transform: rotateY(0);
+  background: #02b3e4;
+  cursor: default;
+}
+
+.deck .card.show {
+  font-size: 33px;
+}
+
+.deck .card.match {
+  cursor: default;
+  background: #02ccba;
+  font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+.score-panel {
+  text-align: center;
+  width: 600px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.score-panel .stars {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+}
+
+.score-panel .restart {
+  float: right;
+  cursor: pointer;
+}
