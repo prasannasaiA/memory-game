@@ -1,3 +1,8 @@
+/* Adding text shadow to heading. */
+#heading{
+  text-shadow:5px 5px 5px gray;
+}
+
 /* Does not allow to click opened card. */
 .counter {
   pointer-events: none;
