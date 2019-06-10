@@ -12,17 +12,19 @@ A simple Memory Game Project for Udacity's Front-end development [nanodegree pro
 * [Steps followed](#steps-followed)
 * [How to play](#how-to-play)
 * [Game functionality](#game-functionality)
-* [Benefits of Memory Game Project](#benefits-of-Memory-Game-Project)
+* [Benefits of Memory Game Project](#benefits-of-memory-game-project)
 * [Tools used](#tools-used)
 * [Contributing](#contributing)
 
 --------------------------------------------------------------------------------------------------------------------------
 
-##Download
+## Download
 
 - The starter code for the project can be downloaded from:
-      1. Memory Game project repository on GitHUB : <https://github.com/udacity/fend-project-memory-game>
-      2. The Zipped File : <https://github.com/udacity/fend-project-memory-game/archive/master.zip>
+
+     1. Memory Game project repository on GitHUB : <https://github.com/udacity/fend-project-memory-game>
+      
+     2. The Zipped File : <https://github.com/udacity/fend-project-memory-game/archive/master.zip>
 
 - Download from any of the given sources Now Extract the folder.
 
@@ -132,27 +134,27 @@ fend-project-memory-game-master.zip
 
 --------------------------------------------------------------------------------------------------------------------------
 
-##Game functionality
+## Game functionality
 
 - The real-life game, players flip over cards to locate the pairs that match The goal is to recreate this effect in the project.
 
 - There are a couple of interactions that are handled:
 
-### Flipping cards:
+#### Flipping cards:
       - The cards are flipped horizontally.
-### A Correct Guess (#####When cards match):
+#### A Correct Guess (When cards match):
       - The cards are flipped open and made wobble.
-### An Incorrect Guess (####When cards do not match):
+#### An Incorrect Guess (When cards do not match):
       - The cards are flipped over and made wobble.
-### Pause and Restart
+#### Pause and Restart
       - The game can be paused by clicking pause icon or using a Keyboard shortcut `*Shift+P*`.
       - The game can be restarted by clicking restart icon or using a keyboard shortcut `*Shift+R*` .
-### Winning The Game
+#### Winning The Game
       - A popup is displayed with No. of moves, star rating and Time taken.
 
 --------------------------------------------------------------------------------------------------------------------------
 
-##Benefits of Memory Game Project
+## Benefits of Memory Game Project
 
 ```
   * This game presents the first opportunity to fully combine the skills in HTML, CSS, and JavaScript into a large project.
